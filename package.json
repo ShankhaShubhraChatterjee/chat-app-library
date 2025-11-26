@@ -1,33 +1,33 @@
 {
-  "name": "chat-app-library",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "format": "bunx biome format --write",
-    "lint": "bunx biome lint --write"
-  },
-  "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.3.7",
-    "@eslint/js": "^9.39.1",
-    "@types/node": "^24.10.1",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react-swc": "^4.2.2",
-    "globals": "^16.5.0",
-    "stylus": "^0.64.0",
-    "typescript": "~5.9.3",
-    "vite": "^7.2.4"
-  },
-  "trustedDependencies": [
-    "@parcel/watcher",
-    "@swc/core"
-  ]
+	"name": "chat-app-library",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"preview": "vite preview",
+		"format": "bunx biome format --write",
+		"lint": "bunx biome lint --write"
+	},
+	"dependencies": {
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.7",
+		"@eslint/js": "^9.39.1",
+		"@types/node": "^24.10.1",
+		"@types/react": "^19.2.7",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react-swc": "^4.2.2",
+		"globals": "^16.5.0",
+		"stylus": "^0.64.0",
+		"typescript": "~5.9.3",
+		"vite": "^7.2.4"
+	},
+	"trustedDependencies": [
+		"@parcel/watcher",
+		"@swc/core"
+	]
 }
