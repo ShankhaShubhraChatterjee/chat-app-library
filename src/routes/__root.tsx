@@ -15,6 +15,9 @@ function RootComponent() {
 							<li>
 								<Link to="/">Home</Link>
 							</li>
+							<li>
+								<Link to="/components/chat-message">Chat Message</Link>
+							</li>
 						</ul>
 					</nav>
 				</aside>
