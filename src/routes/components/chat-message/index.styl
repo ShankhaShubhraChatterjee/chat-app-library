@@ -1,3 +1,44 @@
-.chat__message--text
-  color red
-  font-weight bolder
+.chat__message--container
+	color white
+	font-weight bolder
+	height 100%
+	width 100%
+	font-family Lato
+	font-weight normal
+	position relative
+	padding 5px
+	z-index 10
+
+.chat__message--container::after
+	content ''
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+	background url('https://imgs.search.brave.com/aC2eR9UL2WUGB-ZG2HVSVhCDP2X6GXHHGPNMEBIDfqo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDk5NzMy/ODMuanBn')
+	background-repeat no-repeat
+	background-attachment fixed
+	background-position center
+	background-size cover
+	z-index -1
+
+.chat__message--receiver
+	padding 1.5px
+	text-align right
+
+.chat__message--sender
+	padding 1.5px
+	text-align left
+
+span
+	display inline-flex 
+	padding 8px
+	border-radius 10px
+
+.chat__message--sender--msg
+	background linear-gradient(45deg, purple, violet)
+	
+.chat__message--receiver--msg
+	background-color purple
+	
