@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
+import {  Outlet, createRootRoute } from "@tanstack/react-router";
+import Navbar from "./shared/navbar";
 
 export const Route = createRootRoute({
 	component: RootComponent,
@@ -8,20 +9,7 @@ export const Route = createRootRoute({
 function RootComponent() {
 	return (
 		<React.Fragment>
-			<div>
-				<aside>
-					<nav>
-						<ul>
-							<li>
-								<Link to="/">Home</Link>
-							</li>
-							<li>
-								<Link to="/components/chat-message">Chat Message</Link>
-							</li>
-						</ul>
-					</nav>
-				</aside>
-			</div>
+			<Navbar />
 			<Outlet />
 		</React.Fragment>
 	);
