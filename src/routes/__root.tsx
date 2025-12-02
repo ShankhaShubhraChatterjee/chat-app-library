@@ -1,5 +1,5 @@
 import * as React from "react";
-import {  Outlet, createRootRoute } from "@tanstack/react-router";
+import { Outlet, createRootRoute } from "@tanstack/react-router";
 import Navbar from "./shared/navbar";
 import Footer from "./shared/footer";
 
@@ -14,7 +14,7 @@ function RootComponent() {
 			<div className="outlet__container">
 				<Outlet />
 			</div>
-			
+
 			<Footer />
 		</React.Fragment>
 	);

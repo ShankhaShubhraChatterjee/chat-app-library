@@ -8,71 +8,71 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as ComponentsChatMessageIndexRouteImport } from './routes/components/chat-message/index'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as ComponentsChatMessageIndexRouteImport } from "./routes/components/chat-message/index";
 
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/",
+	path: "/",
+	getParentRoute: () => rootRouteImport,
+} as any);
 const ComponentsChatMessageIndexRoute =
-  ComponentsChatMessageIndexRouteImport.update({
-    id: '/components/chat-message/',
-    path: '/components/chat-message/',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+	ComponentsChatMessageIndexRouteImport.update({
+		id: "/components/chat-message/",
+		path: "/components/chat-message/",
+		getParentRoute: () => rootRouteImport,
+	} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/components/chat-message': typeof ComponentsChatMessageIndexRoute
+	"/": typeof IndexRoute;
+	"/components/chat-message": typeof ComponentsChatMessageIndexRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/components/chat-message': typeof ComponentsChatMessageIndexRoute
+	"/": typeof IndexRoute;
+	"/components/chat-message": typeof ComponentsChatMessageIndexRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/components/chat-message/': typeof ComponentsChatMessageIndexRoute
+	__root__: typeof rootRouteImport;
+	"/": typeof IndexRoute;
+	"/components/chat-message/": typeof ComponentsChatMessageIndexRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/components/chat-message'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/components/chat-message'
-  id: '__root__' | '/' | '/components/chat-message/'
-  fileRoutesById: FileRoutesById
+	fileRoutesByFullPath: FileRoutesByFullPath;
+	fullPaths: "/" | "/components/chat-message";
+	fileRoutesByTo: FileRoutesByTo;
+	to: "/" | "/components/chat-message";
+	id: "__root__" | "/" | "/components/chat-message/";
+	fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  ComponentsChatMessageIndexRoute: typeof ComponentsChatMessageIndexRoute
+	IndexRoute: typeof IndexRoute;
+	ComponentsChatMessageIndexRoute: typeof ComponentsChatMessageIndexRoute;
 }
 
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/components/chat-message/': {
-      id: '/components/chat-message/'
-      path: '/components/chat-message'
-      fullPath: '/components/chat-message'
-      preLoaderRoute: typeof ComponentsChatMessageIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-  }
+declare module "@tanstack/react-router" {
+	interface FileRoutesByPath {
+		"/": {
+			id: "/";
+			path: "/";
+			fullPath: "/";
+			preLoaderRoute: typeof IndexRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/components/chat-message/": {
+			id: "/components/chat-message/";
+			path: "/components/chat-message";
+			fullPath: "/components/chat-message";
+			preLoaderRoute: typeof ComponentsChatMessageIndexRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+	}
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  ComponentsChatMessageIndexRoute: ComponentsChatMessageIndexRoute,
-}
+	IndexRoute: IndexRoute,
+	ComponentsChatMessageIndexRoute: ComponentsChatMessageIndexRoute,
+};
 export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+	._addFileChildren(rootRouteChildren)
+	._addFileTypes<FileRouteTypes>();
