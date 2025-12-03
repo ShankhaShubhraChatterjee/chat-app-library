@@ -1,0 +1,145 @@
+:root
+    --msg-text-color white
+    --chat-accent-color goldenrod
+
+.chat__input--container
+    display flex
+    justify-content center
+    align-items center
+    height calc(100vh - 110px)
+    width 100%
+    padding 0 15px
+    border-radius 10px
+    background linear-gradient(to right, #6441a5, #2a0845)
+
+.input__container
+    width 100%
+    display grid
+    grid-template-columns 45px 1fr 80px
+    grid-template-areas "msg-input-left-icons msg-input msg-input-right-icons"
+    align-items flex-end
+    justify-content space-between
+    bottom 5px
+    border-radius 30px
+    background-color rgba(33, 19, 14, 0.5)
+    backdrop-filter blur(5px)
+    max-height 200px
+    position relative
+
+.chat__msg
+    display none
+
+.msg__input--container
+    grid-area msg-input
+    display flex
+    align-items center
+    justify-content center
+    width 100%
+    height 100%
+    position relative
+    transition width 200ms ease-in-out
+
+.msg__textarea
+    position absolute
+    top 0
+    resize none
+    left 0
+    width 5px
+    height 5px
+    z-index -1
+    visibility hidden
+
+.chat__text--msg--input
+    padding 5px 0
+    border-radius 0 10px 10px 0
+    border none
+    width 100%
+    text-align left
+    font-size 0.9em
+    z-index 1
+    background-color transparent
+    font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+    outline none
+    display inline-block
+    position relative
+    max-height 200px
+    color var(--msg-text-color)
+    overflow auto
+    &::-webkit-scrollbar
+        width 8px
+        border-radius 0 20px 20px 0
+        height 100%
+
+.chat__text--msg--input--placeholder
+    color white
+    position absolute
+    top 12px
+    font-size 16px
+    left 4px
+    transition opacity, 100ms ease-out
+    font-family "Open Sans", sans-serif
+
+.chat__msg--icon--label
+    width 35px
+    border-radius 50%
+    height 35px
+    display flex
+    align-items center
+    justify-content center
+    cursor pointer
+    margin 5px
+    &:hover
+        background-color var(--chat-accent-color)
+    i
+        font-size 1.3em
+        color white
+        height 16px
+        width 16px
+        position relative
+        &:before
+            position absolute !important
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+
+.msg__input--left--icons
+    grid-area msg-input-left-icons
+
+.msg__input--right--icons
+    grid-area msg-input-right-icons
+    display flex
+    justify-content center
+    align-items center
+    padding 5px 0
+    position relative
+    text-align right
+    label
+        margin 0 1.5px
+    button
+        background none
+        outline none
+        border none
+        margin 0
+        padding 0
+        i
+            font-size 1.8em
+
+.emoji__menu
+    position absolute
+    height auto
+    width 360px
+    bottom 50px
+    right 9px
+    padding 7.5px
+    transform scale(0)
+    transform-origin bottom right
+    transition transform, 200ms ease
+    &::-webkit-scrollbar
+        display none
+
+em-emoji-picker
+    height 300px !important
+
+.show__emoji--menu
+    transform scale(1) !important
+    transition transform, 200ms ease
